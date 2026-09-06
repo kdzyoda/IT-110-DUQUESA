@@ -1,205 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My First HTML Website | IT 110</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Roboto Condensed, sans-serif;
-        }
-
-        body {
-            min-height: 100vh;
-            color: white;
-            background:
-                radial-gradient(circle at 20% 20%, #7c3aed, transparent 35%),
-                radial-gradient(circle at 80% 80%, #06b6d4, transparent 35%),
-                linear-gradient(135deg, #080b1a, #111827);
-            padding: 30px;
-        }
-
-        header {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px 30px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 25px;
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(18px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            opacity: 0.8;
-        }
-
-        nav a:hover {
-            opacity: 1;
-        }
-
-        main {
-            max-width: 1100px;
-            margin: 70px auto;
-        }
-
-        section {
-            padding: 55px;
-            border-radius: 35px;
-            background: rgba(255,255,255,0.10);
-            border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(25px);
-            box-shadow:
-                0 30px 80px rgba(0,0,0,0.35),
-                inset 0 1px 1px rgba(255,255,255,0.3);
-        }
-
-        h1 {
-            font-size: clamp(45px, 8vw, 85px);
-            line-height: 0.95;
-            margin-bottom: 25px;
-        }
-
-        h1 span {
-            color: #67e8f9;
-        }
-
-        p {
-            max-width: 650px;
-            font-size: 18px;
-            line-height: 1.7;
-            color: rgba(255,255,255,0.75);
-        }
-
-        .cards {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .card {
-            flex: 1;
-            min-width: 200px;
-            padding: 25px;
-            border-radius: 22px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-        }
-
-        .card p {
-            font-size: 17px;
-            margin-top: 10px;
-        }
-
-        button {
-            margin-top: 30px;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 50px;
-            background: white;
-            color: #111827;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255,255,255,0.2);
-        }
-
-        button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(255,255,255,0.3);
-        }
-
-        ul {
-            margin-top: 15px;
-            padding-left: 20px;
-            color: rgba(255,255,255,0.7);
-        }
-
-        li {
-            margin: 8px 0;
-        }
-
-        footer {
-            max-width: 1100px;
-            margin: auto;
-            text-align: center;
-            padding: 25px;
-            color: rgba(255,255,255,0.5);
-        }
-    </style>
-</head>
-
-<body>
-
+  </head>
+  <body>
     <header>
-        <nav>
-            <strong>IT 110 - HTML ASSIGNMENT</strong>
+      <nav>
+        <strong>IT 110 - HTML ASSIGNMENT</strong>
 
-            <div>
-                <a href="#">Home</a>
-                <a href="#">About Me</a>
-                <a href="#">Contacts</a>
-            </div>
-        </nav>
+        <div>
+          <a href="#">Home</a>
+          <a href="#">About Me</a>
+          <a href="#">Contacts</a>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section>
-            <h1>Hello, I'm <span>KHIZHA DUQUESA.</span></h1>
+      <section>
+        <h1>Hello, I'm <span>KHIZHA DUQUESA.</span></h1>
+
+        <p>
+          I'm Khizha Rhizhane C. Duquesa. A 3rd year BSIT student from Caraga
+          State University. Welcome to my first HTML website. <br />An
+          assignment required for IT 110. This is a simple website I've made for
+          my progress in web development.<br /><br />
+          Thanks for viewing.<br><br>
+        </p>
+
+        <button>How to Contact Me?</button>
+
+        <div class="cards">
+          <div class="card">
+            <strong>01 — LinkedIn</strong>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/khizharhizhaneduquesa/"
+                target="_blank"
+                style="color: #67e8f9; text-decoration: none"
+                ><button>Visit my LinkedIn</button></a
+              >
+            </p>
+          </div>
+
+          <div class="card">
+            <strong>02 — Instagram</strong>
 
             <p>
-                I'm Khizha Rhizhane C. Duquesa. A 3rd year BSIT student from Caraga State University.
-                Welcome to my first HTML website. An assignment required for IT 110.
-                This is a simple website I've made for my progress in web development.<br><br>
-                Thanks for viewing.
+              <a
+                href="https://www.instagram.com/khizhahaha/"
+                target="_blank"
+                style="color: #67e8f9; text-decoration: none"
+                ><button>Visit my Instagram</button></a
+              >
             </p>
+          </div>
 
-            <button>How to Contact Me?</button>
+          <div class="card">
+            <strong>03 — Facebook</strong>
+            <p>
+              <a
+                href="https://www.facebook.com/khizloml"
+                target="_blank"
+                style="color: #67e8f9; text-decoration: none"
+                ><button>Visit my Facebook</button></a
+              >
+            </p>
+            <br><br><br>
+          </div>
 
-            <div class="cards">
+          <div class="card facts-card">
+            <img
+              src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t39.99422-6/773912946_1049655884609851_2375118838608367016_n.png?stp=dst-jpg_tt6&cstp=mx1860x1888&ctp=s1860x1888&_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEEk09OeSN04vY3m0gwLchBp8is7anrenWnyKztqet6deHTHIsMAcEyhzyvv2FGHK4aeVZDFgRtQfaYxxwUWPkK&_nc_ohc=GkKjbFK79UQQ7kNvwHSceUl&_nc_oc=AdpCPqMkhcienInMi4qY_hQ_imSDa-LSMjIyTlSEMEkBRuBLaXUvWc10EoZBrzG1Z8RRfsJYgCan_5tewk64ma4m&_nc_zt=14&_nc_ht=scontent.fcgy1-3.fna&_nc_gid=fedTXslITKovcj-HsFllbQ&_nc_ss=7b2a8&oh=00_AQIw9ryVlJYoeEXlhR9lPS5-fdw71AGcvn3dDjVTJFPQJA&oe=6AA31EA7"
+              alt="My portrait"
+              style="width: 300px; height: 300px; object-fit: cover"
+            />
+            <br><br>
+            <h1><strong>FACTS ABOUT ME</strong></h1>
 
-                <div class="card">
-                    <strong>01 — LinkedIn</strong>
-                    <p>
-                        <a href="https://www.linkedin.com/in/khizharhizhaneduquesa/" target="_blank" style="color: #67e8f9; text-decoration: none;"><button>Visit my LinkedIn</button></a>
-                    </p>
-                </div>
+            <div class="facts-grid">
+              <figure class="fact">
+                <img
+                  src="https://i.pinimg.com/736x/de/69/f8/de69f8c96aa3c8817bdb999122c750b9.jpg"
+                  style="width: 300px; height: 300px; object-fit: cover"
+                />
+                <strong><figcaption>I'm a 3rd year BSIT student at Caraga State University.</figcaption></strong>
+              </figure><br><br>
 
-                <div class="card">
-                    <strong>02 — Instagram</strong>
+              <figure class="fact">
+                <img
+                  src="https://i.pinimg.com/736x/cd/49/92/cd4992e830c9565e88829a5a3e2b7b06.jpg"
+                  style="width: 300px; height: 300px; object-fit: cover"
+                />
+                <strong><figcaption>I have a bit knowledge of the techstack: <br>HTML, CSS, JavaScript, Python, C, C++, Java, React, Laravel, <br>GitHub, Canva, Figma, Node.js, Express.js, MongoDB, and Git, TypeScript.</figcaption></strong>
+              </figure><br><br>
 
-                    <p>
-                        <a href="https://www.instagram.com/khizhahaha/" target="_blank" style="color: #67e8f9; text-decoration: none;"><button>Visit my Instagram</button></a>
-                    </p>
-                </div>
+              <figure class="fact">
+                <img
+                  src="https://i.pinimg.com/736x/ee/8a/d9/ee8ad99cce8523a14798964c9df9dbde.jpg"
+                  style="width: 300px; height: 300px; object-fit: cover"
+                />
+                <strong><figcaption>I love listening to music, it's my go to stress reliever, and it makes me feel productive and hyped.</figcaption></strong>
+              </figure><br><br>
 
-                <div class="card">
-                    <strong>03 — Facebook</strong>
-                    <p>
-                        <a href="https://www.facebook.com/khizloml" target="_blank" style="color: #67e8f9; text-decoration: none;"><button>Visit my Facebook</button></a>
-                    </p>
-                </div>
-
+              <figure class="fact">
+                <img
+                  src="https://i.pinimg.com/736x/26/75/cd/2675cd83992ee15b3446fcf821b00ce7.jpg"
+                  style="width: 300px; height: 300px; object-fit: cover"
+                />
+                <strong><figcaption>I do love gaming, and I have 4 pets (cats) Namely: Burakdak, Dodong, Kitty, Bella.</figcaption></strong>
+              </figure><br><br>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
-
     <footer>
-        <small>© 2026 My First HTML Project</small>
+      <small>© 2026 My First HTML Project</small>
     </footer>
-
-</body>
+  </body>
 </html>
