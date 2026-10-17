@@ -1,0 +1,226 @@
+/* =========================================
+   1. RESET & BASE
+   ========================================= */
+
+/* Universal selector: simple reset.
+   box-sizing: border-box makes width include padding and border. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #5a4a57;
+  background-color: rgb(255, 245, 240);      
+  padding: 2rem 1rem;
+}
+
+/* Grouping selector: shared heading color and weight */
+h1, h2 {
+  font-weight: bold;
+  color: #d94f70;                            
+}
+
+/* Heading font: rounded, friendly Trebuchet MS */
+h1, h2 {
+  font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 3.2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Pseudo-element on h2: small heart-colored accent bar before each heading */
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 0.4em;
+  height: 1em;
+  margin-right: 0.5rem;
+  background-color: hotpink;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+/* =========================================
+   2. LAYOUT: HEADER, MAIN, FOOTER
+   ========================================= */
+
+header,
+footer {
+  text-align: center;                        /* centers text in header and footer */
+  padding: 1.5rem 0;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: rgba(90, 74, 87, 0.7);              /* rgba(): semi-transparent text */
+}
+
+/* =========================================
+   3. NAVIGATION
+   ========================================= */
+
+nav a {
+  display: inline-block;                     /* lets padding and background affect width/height */
+  margin: 0 0.25rem;
+  padding: 0.4rem 1rem;
+  border: 2px solid #f7b8c8;
+  border-radius: 999px;                     
+  background-color: white;
+  color: #d94f70;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+nav a:hover {
+  background-color: #f7b8c8;
+  color: white;
+}
+
+/* =========================================
+   4. CARD COMPONENT
+   ========================================= */
+
+/* Class selector: styles every card.
+Specified width = 600px.
+With border-box, padding (24px per side) and borders (2px per side)
+are included within the 600px width.
+Content width = 600 - 48 - 4 = 548px.
+max-width: 100% can reduce the width on smaller screens. */
+
+.card {
+  width: 600px;
+  max-width: 100%;                           /* stays responsive on small screens */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border: 2px solid #ffd1dc;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(217, 79, 112, 0.12);
+}
+
+/* Descendant selector: any paragraph inside a card.
+   This color WINS over .intro (see section 7). */
+.card p {
+  margin-bottom: 0.75rem;
+  color: #8a6283;
+}
+
+/* Class selector: intro paragraph */
+.intro {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* ID selector: makes #about stand out from the other cards */
+#about {
+  position: relative;
+  border-color: #ff8fab;
+  border-width: 3px;
+}
+
+/* Pseudo-element: "New" in #about */
+#about::after {
+  content: "NEW ♡";
+  position: absolute;
+  top: -12px;
+  right: 15px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background-color: #ff8fab;
+  color: white;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* =========================================
+   5. LISTS AND FLEXBOX
+   ========================================= */
+
+/* Flex container: items in a row with gaps */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+/* Child combinator: only direct <li> children of .skills-list */
+.skills-list > li {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background-color: #fde2ea;
+  color: #b83a5c;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* =========================================
+   6. DISPLAY AND VISIBILITY
+   ========================================= */
+
+/* display: none removes the element and its space entirely */
+.hide-none {
+  display: none;
+}
+
+/* visibility: hidden hides the element but keeps its space */
+.hide-visibility {
+  visibility: hidden;
+}
+
+/* Scrollable box: fixed height, scrollbar when content overflows */
+.scroll-box {
+  height: 120px;
+  overflow: auto;
+}
+
+/* =========================================
+   7. CASCADE DEMONSTRATION
+   ========================================= */
+/* Two rules target the .intro paragraph's color:
+   ".card p" (specificity 0,1,1) and ".intro" (specificity 0,1,0).
+   ".card p" wins because it has higher specificity. Source order only
+   decides ties, so the later ".intro" color rule does not apply.
+   The intro text therefore uses the ".card p" color, not the blue below. */
+.intro {
+  color: #2c5f8a;                            /* LOSES: lower specificity */
+}
+
+/* =========================================
+   8. REFLECTION ANSWERS
+   ========================================= 
+        Q1 The ".card p" rule won because it has higher specificity than the ".intro" rule.
+        The ".card p" selector has a class and an element selector, while ".intro" has only a class selector.
+        Even though ".intro" was written later in the CSS file, specificity is checked before source order.
+        Therefore, the paragraph uses the color defined in ".card p" instead of the blue color in ".intro".
+
+        Q2 If box-sizing were content-box, the total width of one .card would be 652px.
+        The specified width of 600px would apply only to the content, so padding and borders
+        would add 48px (24px x 2) and 4px (2px x 2) on top of it: 600 + 48 + 4 = 652px.
+
+        Q3 I would choose visibility: hidden when I want to hide an element but keep its space in the layout.
+        This prevents other elements from moving into its place. I would use display: none instead when I want to hide
+        an element and remove its space completely.
+
+*/
